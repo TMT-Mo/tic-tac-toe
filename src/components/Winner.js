@@ -23,5 +23,6 @@ const Winner = ({ winner, onResetHandler }) => {
     </>
   );
 };
+//
 
 export default Winner;
