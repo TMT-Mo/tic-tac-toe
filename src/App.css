@@ -1,38 +1,137 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   min-height: 100vh;
+  position: relative;
+  flex-direction: column;
+}
+.board {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  max-width: 70vw;
+  max-height: 60vh;
+  overflow: scroll;
+  margin: auto;
+}
+.column {
+  display: flex;
+  flex-direction: row;
+}
+
+.column .cell {
+  border: 1px #000 solid;
+  min-width: 50px;
+  min-height: 30px;
+  white-space: nowrap;
+}
+
+.board-intro {
+  display: flex;
+  border: 1px #000 solid;
+  border-radius: 20px;
+  transform: translateY(20px);
+}
+
+.introduction,
+.board-timing,
+.form-name {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  min-width: fit-content;
+  margin: auto;
+}
+
+.form-name {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  border: 1px #000 solid;
+}
+
+.board-player .player-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-weight: 600;
+  /* justify-content: start; */
+  align-items: start;
 }
 
-.App-link {
-  color: #61dafb;
+.board-player .form-name .field,
+.board-player .form-winner .field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-winner,
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+}
+
+.board-player .form-name .field,
+.board-player .form-winner .field > * {
+  margin-bottom: 20px;
+}
+
+.board-player .form-name .field,
+.board-player .form-winner .field span {
+  margin-right: 10px;
+}
+
+.form-winner {
+  z-index: 20;
+  width: fit-content;
+  height: fit-content;
+  background-color: #fff;
+  padding: 20px 40px;
+  border-radius: 15px;
+  border: #000 solid 1px;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+}
+
+.backdrop {
+  background-color: white;
+  z-index: 10;
+  opacity: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+.introduction {
+  text-align: start;
+}
+
+.introduction,
+.board-timing {
+  max-height: 250px;
+}
+
+input {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px #000 solid;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px #000 solid;
+  font-weight: 600;
+}
+
+button:hover {
+  cursor: pointer;
 }
